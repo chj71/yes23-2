@@ -46,9 +46,6 @@ public class Order {
         OrderApplication.applicationContext.getBean(yes.external.PayService.class)
             .paymentcancel(pay);
 
-
-
-
     }
 
 
