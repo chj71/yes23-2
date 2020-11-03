@@ -3,7 +3,7 @@ package yes;
 public class Shipped extends AbstractEvent {
 
     private Long id;
-    private String orderId;
+    private Long orderId;
     private String deliveryInfo;
     private String status;
 
@@ -14,11 +14,11 @@ public class Shipped extends AbstractEvent {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getOrderId() {
+    public Long getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(String orderId) {
+    public void setOrderId(Long orderId) {
         this.orderId = orderId;
     }
     public String getDeliveryInfo() {
