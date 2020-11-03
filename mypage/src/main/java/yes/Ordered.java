@@ -3,7 +3,7 @@ package yes;
 public class Ordered extends AbstractEvent {
 
     private Long id;
-    private Long productId;
+    private String productId;
     private Integer qty;
 
     public Long getId() {
@@ -13,11 +13,11 @@ public class Ordered extends AbstractEvent {
     public void setId(Long id) {
         this.id = id;
     }
-    public Long getProductId() {
+    public String getProductId() {
         return productId;
     }
 
-    public void setProductId(Long productId) {
+    public void setProductId(String productId) {
         this.productId = productId;
     }
     public Integer getQty() {
