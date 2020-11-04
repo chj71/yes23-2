@@ -15,8 +15,8 @@ public class Order {
     private Integer qty;
     private String status;
 
-    @PrePersist
-    public void onPrePersist(){
+    @PostPersist
+    public void onPostPersist(){
         Ordered ordered = new Ordered();
         BeanUtils.copyProperties(this, ordered);
         ordered.publishAfterCommit();
@@ -25,6 +25,11 @@ public class Order {
         // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
 
         yes.external.Pay pay = new yes.external.Pay();
+        pay.setOrderId(ordered.getId());
+        Long lChargeAmount = Long.valueOf(12000);
+        pay.setChargeAmount(lChargeAmount);
+        pay.setStatus("Payed");
+
         // mappings goes here
         OrderApplication.applicationContext.getBean(yes.external.PayService.class)
             .payment(pay);
@@ -32,8 +37,8 @@ public class Order {
 
     }
 
-    @PreUpdate
-    public void onPreUpdate(){
+    @PostUpdate
+    public void onPostUpdate(){
         OrderCancelled orderCancelled = new OrderCancelled();
         BeanUtils.copyProperties(this, orderCancelled);
         orderCancelled.publishAfterCommit();
@@ -42,6 +47,9 @@ public class Order {
         // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
 
         yes.external.Pay pay = new yes.external.Pay();
+        pay.setStatus("Pay Canceled");
+        pay.setOrderId(orderCancelled.getId());
+
         // mappings goes here
         OrderApplication.applicationContext.getBean(yes.external.PayService.class)
             .paymentcancel(pay);
