@@ -39,12 +39,12 @@
 
 비기능적 요구사항
 1. 트랜잭션
-    i. 결제가 되지 않은 주문건은 아예 거래가 성립되지 않아야 한다  Sync 호출 
+    - 결제가 되지 않은 주문건은 아예 거래가 성립되지 않아야 한다  Sync 호출 
 2. 장애격리
-    i. 주문은 365일 24시간 받을 수 있어야 한다  Async (event-driven), Eventual Consistency
-    ii. 결제시스템이 과중되면 사용자를 잠시동안 받지 않고 결제를 잠시후에 하도록 유도한다  Circuit breaker, fallback
+    - 주문은 365일 24시간 받을 수 있어야 한다  Async (event-driven), Eventual Consistency
+    - 결제시스템이 과중되면 사용자를 잠시동안 받지 않고 결제를 잠시후에 하도록 유도한다  Circuit breaker, fallback
 3. 성능
-    i. 고객이 자주 주문상태를 확인할 수 있어야 한다  CQRS
+    - 고객이 자주 주문상태를 확인할 수 있어야 한다  CQRS
 
 
 # 체크포인트
