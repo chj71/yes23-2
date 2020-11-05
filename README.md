@@ -122,7 +122,7 @@
 
 ### 기능적/비기능적 요구사항을 커버하는지 검증
 
-![image](https://user-images.githubusercontent.com/487999/79684167-3ecd2f00-826a-11ea-806a-957362d197e3.png)
+![image](https://user-images.githubusercontent.com/65432084/98189196-cb65e300-1f57-11eb-9d3a-f6e63cdd6539.PNG)
 
     - 고객이  주문한다 (ok)
     - 주문을 하면 결제 기능이 호출된다 (ok)
