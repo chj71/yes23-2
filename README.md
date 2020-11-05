@@ -112,7 +112,7 @@
 
 
 ### 이벤트 도출
-![image](https://user-images.githubusercontent.com/487999/79683604-47bc0180-8266-11ea-9212-7e88c9bf9911.png)
+![image](https://user-images.githubusercontent.com/65432084/98187615-b50a5800-1f54-11eb-8190-fcd929e9d899.PNG)
 
 
     - 도메인 서열 분리 
